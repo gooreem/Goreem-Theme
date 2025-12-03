@@ -1,218 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عنوان المقال – متجر بيوركات</title>
-
-  <!-- خط Cairo -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Swiper CSS (لو احتجته) -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-  <!-- ملف الستايل الرئيسي -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <!-- التوب بار -->
-  <div class="top-bar">
-    <div class="container">
-      <p>🚚 توصيل سريع داخل الرياض</p>
-    </div>
-  </div>
-
-  <!-- الهيدر (نفس index.html) -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <div class="logo">
-          <a href="index.html">
-            <img src="assets/images/logo.png" alt="شعار متجر بيوركات" />
-          </a>
-        </div>
-
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="category.html">الأقسام</a></li>
-            <li><a href="about.html">عن بيوركات</a></li>
-            <li><a href="blog.html">المدونة</a></li>
-            <li><a href="contact.html">تواصل معنا</a></li>
-          </ul>
-        </nav>
-
-        <div class="header-actions">
-          <a href="#" class="header-icon-link">مفضلة</a>
-          <a href="#" class="header-icon-link">حسابي</a>
-          <a href="cart.html" class="header-cart">
-            <span class="cart-label">السلة</span>
-            <span class="cart-count">2</span>
-          </a>
-          <button class="mobile-menu-toggle" aria-label="القائمة">
-            ☰
-          </button>
-        </div>
-      </div>
-
-      <!-- قائمة الموبايل -->
-      <nav class="mobile-menu">
-        <ul>
-          <li><a href="index.html">الرئيسية</a></li>
-          <li><a href="category.html">الأقسام</a></li>
-          <li><a href="about.html">عن بيوركات</a></li>
-          <li><a href="blog.html">المدونة</a></li>
-          <li><a href="contact.html">تواصل معنا</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- المحتوى الرئيسي -->
-  <main>
-    <section class="post-header-section">
-      <div class="container">
-        <h1 class="post-title">
-          كيف تختار طعامًا مناسبًا لقطك؟
-        </h1>
-        <p class="post-meta">
-          <span class="post-date">10 نوفمبر 2025</span> •
-          <span class="post-category">نصائح غذائية</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="post-content-section">
-      <div class="container">
-        <div class="post-image">
-          <img src="assets/images/blog-1.jpg" alt="صورة المقال" />
-        </div>
-
-        <article class="post-content">
-          <p>
-            في هذا المقال نستعرض أهم النقاط التي تساعدك على اختيار طعام مناسب لقطك حسب
-            عمره، وزنه، حالته الصحية، ونشاطه اليومي، مع نصائح عملية لتفادي الأخطاء الشائعة.
-          </p>
-
-          <h2>1. مراعاة عمر القطة</h2>
-          <p>
-            تختلف احتياجات القطط الصغيرة عن القطط البالغة أو الكبيرة في السن، لذلك من المهم
-            اختيار طعام مكتوب عليه العمر المستهدف بوضوح.
-          </p>
-
-          <h2>2. قراءة المكونات</h2>
-          <p>
-            احرص على أن تكون البروتينات الحيوانية من ضمن المكونات الأساسية في بداية القائمة،
-            وتفادى المنتجات التي تحتوي على نسب عالية من الحشو والمواد غير المفيدة.
-          </p>
-
-          <ul>
-            <li>اختر طعامًا غنيًا بالبروتين.</li>
-            <li>تأكد من وجود الفيتامينات والمعادن الأساسية.</li>
-            <li>تجنب الأطعمة التي تحتوي على سكريات مضافة.</li>
-          </ul>
-
-          <h2>3. استشارة الطبيب البيطري</h2>
-          <p>
-            في حال وجود أمراض مزمنة مثل مشاكل الكلى أو السمنة، يفضّل استشارة الطبيب البيطري
-            لاختيار نوع غذاء علاجي مناسب.
-          </p>
-
-          <p>
-            في النهاية، اختيار الطعام المناسب لقطك يساعد على تحسين صحته العامة، نشاطه، ونوعية
-            حياته، ويقلل من زيارة العيادة البيطرية بسبب المشاكل المرتبطة بالتغذية.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- سكشن مقالات مشابهة -->
-    <section class="related-posts-section">
-      <div class="container">
-        <h2 class="section-title">مقالات مشابهة</h2>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <a href="post.html">
-              <img src="assets/images/blog-2.jpg" alt="تحضير الأليف لزيارة البيطري" />
-            </a>
-            <div class="blog-card-body">
-              <h3 class="blog-card-title">تحضير الأليف لزيارة البيطري بدون توتر</h3>
-              <p class="blog-card-meta">صحة وعناية – 4 دقائق قراءة</p>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <a href="post.html">
-              <img src="assets/images/blog-3.jpg" alt="أفكار لتسلية القطط" />
-            </a>
-            <div class="blog-card-body">
-              <h3 class="blog-card-title">أفكار بسيطة لتسلية القطط داخل المنزل</h3>
-              <p class="blog-card-meta">تسالي وألعاب – 3 دقائق قراءة</p>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <a href="post.html">
-              <img src="assets/images/blog-1.jpg" alt="اختيار رمل مناسب" />
-            </a>
-            <div class="blog-card-body">
-              <h3 class="blog-card-title">كيف تختار رملًا يناسب قطك وبيتك؟</h3>
-              <p class="blog-card-meta">رمل وحمام – 5 دقائق قراءة</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- الفوتر (نفس index.html) -->
-  <footer class="site-footer">
-    <div class="container footer-columns">
-      <div class="footer-column footer-about">
-        <img src="assets/images/logo-footer.png" alt="شعار بيوركات" class="footer-logo" />
-        <p>
-          بيوركات متجر متخصص في منتجات وخدمات الحيوانات الأليفة، نوفر لك تجربة تسوق مريحة
-          وممتعة لاحتياجات أليفك اليومية داخل المتجر وعبر الإنترنت.
-        </p>
-      </div>
-
-      <div class="footer-column footer-links">
-        <h3>روابط مهمة</h3>
-        <ul>
-          <li><a href="about.html">عن بيوركات</a></li>
-          <li><a href="contact.html">تواصل معنا</a></li>
-          <li><a href="#">سياسة الخصوصية</a></li>
-          <li><a href="#">سياسة الاستبدال والاسترجاع</a></li>
-          <li><a href="#">الأسئلة الشائعة</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column footer-contact">
-        <h3>معلومات التواصل</h3>
-        <p>الرياض – حي النرجس</p>
-        <p>جوال: <a href="tel:966500000000">966500000000+</a></p>
-        <p>البريد الإلكتروني: <a href="mailto:info@pure-cat.com">info@pure-cat.com</a></p>
-        <div class="footer-social">
-          <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
-          <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
-          <a href="#"><img src="assets/icons/tiktok.png" alt="TikTok"></a>
-          <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p>© 2025 جميع الحقوق محفوظة لمتجر بيوركات</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <!-- ملف الجافاسكربت الرئيسي -->
-  <script src="js/main.js"></script>
-</body>
-</html>
