@@ -9,11 +9,11 @@
   },
   "author": {
     "name": "Ibrahim Abbas",
-    "email": "your-email@example.com",
-    "url": "https://gooreem.github.io/goreem/"
+    "email": "goreem.eg@gmail.com",
+    "url": "https://gooreem.github.io/goreem-theme/"
   },
-  "preview_url": "https://USERNAME.github.io/goreem-theme/",
-  "repository": "https://github.com/USERNAME/goreem-theme",
+  "preview_url": "https://gooreem.github.io/goreem-theme/",
+  "repository": "https://github.com/gooreem/goreem-theme",
   "technologies": [
     "html",
     "css",
@@ -142,7 +142,7 @@
     }
   },
   "salla": {
-    "theme_url": "https://github.com/USERNAME/goreem-theme",
+    "theme_url": "https://github.com/gooreem/goreem-theme",
     "minimum_platform_version": "3.0.0",
     "category": "general",
     "tags": [
