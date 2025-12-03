@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سلة المشتريات – بيوركات</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- التوب بار -->
+  <div class="top-bar">
+    <div class="container">
+      <p>🚚 توصيل سريع داخل الرياض</p>
+    </div>
+  </div>
+
+  <!-- الهيدر -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="شعار متجر بيوركات" />
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="category.html">الأقسام</a></li>
+            <li><a href="about.html">عن بيوركات</a></li>
+            <li><a href="index.html#blog">المدونة</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#" class="header-icon-link">مفضلة</a>
+          <a href="#" class="header-icon-link">حسابي</a>
+          <a href="cart.html" class="header-cart">
+            <span class="cart-label">السلة</span>
+            <span class="cart-count">2</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="القائمة">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-menu">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="category.html">الأقسام</a></li>
+          <li><a href="about.html">عن بيوركات</a></li>
+          <li><a href="index.html#blog">المدونة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">الرئيسية</a>
+        <span> / </span>
+        <span>سلة المشتريات</span>
+      </nav>
+
+      <div class="cart-layout">
+        <!-- جدول السلة -->
+        <div class="cart-table-wrapper">
+          <h2>سلة المشتريات</h2>
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>المنتج</th>
+                <th>السعر</th>
+                <th>الكمية</th>
+                <th>الإجمالي</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="cart-product">
+                    <img src="assets/images/product-1.jpg" alt="طعام جاف للقطط بنكهة الدجاج" />
+                    <span>طعام جاف للقطط بنكهة الدجاج</span>
+                  </div>
+                </td>
+                <td>45.00 ر.س</td>
+                <td>
+                  <input type="number" class="cart-qty-input" value="1" min="1" />
+                </td>
+                <td>45.00 ر.س</td>
+                <td>
+                  <button class="link-button">إزالة</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="cart-product">
+                    <img src="assets/images/product-3.jpg" alt="رمل متكتل برائحة البيبي بودر" />
+                    <span>رمل متكتل برائحة البيبي بودر</span>
+                  </div>
+                </td>
+                <td>55.00 ر.س</td>
+                <td>
+                  <input type="number" class="cart-qty-input" value="1" min="1" />
+                </td>
+                <td>55.00 ر.س</td>
+                <td>
+                  <button class="link-button">إزالة</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ملخص السلة -->
+        <div class="cart-summary">
+          <h2>ملخص الطلب</h2>
+          <div class="summary-line">
+            <span>مجموع المنتجات</span>
+            <span>100.00 ر.س</span>
+          </div>
+          <div class="summary-line">
+            <span>الشحن (تقديري)</span>
+            <span>15.00 ر.س</span>
+          </div>
+          <div class="summary-line summary-total">
+            <span>الإجمالي النهائي</span>
+            <span>115.00 ر.س</span>
+          </div>
+
+          <a href="checkout.html" class="btn primary full-width" style="margin-top: 12px;">إتمام الطلب</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- الفوتر -->
+  <footer class="site-footer">
+    <div class="container footer-columns">
+      <div class="footer-column footer-about">
+        <img src="assets/images/logo-footer.png" alt="شعار بيوركات" class="footer-logo" />
+        <p>
+          بيوركات متجر متخصص في منتجات وخدمات الحيوانات الأليفة، نوفر لك تجربة تسوق مريحة
+          وممتعة لاحتياجات أليفك اليومية داخل المتجر وعبر الإنترنت.
+        </p>
+      </div>
+
+      <div class="footer-column footer-links">
+        <h3>روابط مهمة</h3>
+        <ul>
+          <li><a href="about.html">عن بيوركات</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">سياسة الاستبدال والاسترجاع</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3>معلومات التواصل</h3>
+        <p>الرياض – حي النرجس</p>
+        <p>جوال: <a href="tel:966500000000">966500000000+</a></p>
+        <p>البريد الإلكتروني: <a href="mailto:info@pure-cat.com">info@pure-cat.com</a></p>
+        <div class="footer-social">
+  <a href="#" aria-label="Twitter">
+    <img src="assets/icons/twitter.png" alt="Twitter">
+  </a>
+
+  <a href="#" aria-label="Instagram">
+    <img src="assets/icons/instagram.png" alt="Instagram">
+  </a>
+
+  <a href="#" aria-label="TikTok">
+    <img src="assets/icons/tiktok.png" alt="TikTok">
+  </a>
+
+  <a href="#" aria-label="Facebook">
+    <img src="assets/icons/facebook.png" alt="Facebook">
+  </a>
+</div>
+ </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 جميع الحقوق محفوظة لمتجر بيوركات</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

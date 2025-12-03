@@ -1,0 +1,156 @@
+{
+  "name": "Goreem Theme",
+  "slug": "goreem-theme",
+  "version": "1.0.0",
+  "rtl": true,
+  "description": {
+    "ar": "Goreem Theme هو ثيم عربي متكامل لمتاجر سلة، موجه لمتاجر الحيوانات الأليفة (خصوصًا القطط) مع تصميم عام يناسب مختلف الأنشطة. يعتمد على HTML + CSS + JS فقط، وهو متجاوب بالكامل مع الهواتف والأجهزة اللوحية.",
+    "en": "Goreem Theme is a fully Arabic RTL theme for Salla stores, optimized for pet stores (especially cats) with a general-purpose design suitable for any niche. Built using pure HTML, CSS, and JavaScript."
+  },
+  "author": {
+    "name": "Ibrahim Abbas",
+    "email": "your-email@example.com",
+    "url": "https://gooreem.github.io/goreem/"
+  },
+  "preview_url": "https://USERNAME.github.io/goreem-theme/",
+  "repository": "https://github.com/USERNAME/goreem-theme",
+  "technologies": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "identity": {
+    "primary_color": "#1B4FA0",
+    "secondary_color": "#FF6FAF",
+    "background_color": "#F7F9FC",
+    "direction": "rtl",
+    "language": "ar"
+  },
+  "assets": {
+    "css": [
+      "assets/css/style.css"
+    ],
+    "js": [
+      "assets/js/main.js"
+    ],
+    "images_path": "assets/images/",
+    "icons_path": "assets/icons/"
+  },
+  "pages": {
+    "home": {
+      "id": "home",
+      "file": "index.html",
+      "title": {
+        "ar": "الصفحة الرئيسية",
+        "en": "Home"
+      }
+    },
+    "product": {
+      "id": "product",
+      "file": "product.html",
+      "title": {
+        "ar": "صفحة المنتج",
+        "en": "Product Page"
+      }
+    },
+    "category": {
+      "id": "category",
+      "file": "category.html",
+      "title": {
+        "ar": "صفحة التصنيف",
+        "en": "Category Page"
+      }
+    },
+    "cart": {
+      "id": "cart",
+      "file": "cart.html",
+      "title": {
+        "ar": "سلة التسوق",
+        "en": "Cart"
+      }
+    },
+    "checkout": {
+      "id": "checkout",
+      "file": "checkout.html",
+      "title": {
+        "ar": "إتمام الطلب",
+        "en": "Checkout"
+      }
+    },
+    "about": {
+      "id": "about",
+      "file": "about.html",
+      "title": {
+        "ar": "عن المتجر",
+        "en": "About"
+      }
+    },
+    "contact": {
+      "id": "contact",
+      "file": "contact.html",
+      "title": {
+        "ar": "تواصل معنا",
+        "en": "Contact"
+      }
+    }
+  },
+  "routes": {
+    "home": "index.html",
+    "product": "product.html",
+    "category": "category.html",
+    "cart": "cart.html",
+    "checkout": "checkout.html",
+    "about": "about.html",
+    "contact": "contact.html"
+  },
+  "sections": {
+    "hero_slider": {
+      "enabled": true,
+      "type": "slider"
+    },
+    "ticker": {
+      "enabled": true,
+      "type": "slider"
+    },
+    "banners_main": {
+      "enabled": true,
+      "type": "banners_50_50"
+    },
+    "categories": {
+      "enabled": true,
+      "type": "grid"
+    },
+    "services_with_video": {
+      "enabled": true,
+      "type": "video_with_banners"
+    },
+    "countdown": {
+      "enabled": true,
+      "type": "countdown"
+    },
+    "testimonials": {
+      "enabled": true,
+      "type": "slider"
+    },
+    "blog": {
+      "enabled": true,
+      "type": "articles"
+    },
+    "brands": {
+      "enabled": true,
+      "type": "slider"
+    }
+  },
+  "salla": {
+    "theme_url": "https://github.com/USERNAME/goreem-theme",
+    "minimum_platform_version": "3.0.0",
+    "category": "general",
+    "tags": [
+      "pets",
+      "cats",
+      "rtl",
+      "arabic",
+      "responsive"
+    ]
+  }
+}

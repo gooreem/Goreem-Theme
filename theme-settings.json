@@ -1,0 +1,269 @@
+{
+  "groups": [
+    {
+      "id": "colors",
+      "label": "ألوان المتجر",
+      "settings": [
+        {
+          "key": "color_primary",
+          "type": "string",
+          "format": "color",
+          "label": "اللون الأساسي (Primary)",
+          "default": "#2563eb"
+        },
+        {
+          "key": "color_secondary",
+          "type": "string",
+          "format": "color",
+          "label": "اللون الثانوي (Secondary)",
+          "default": "#ec4899"
+        },
+        {
+          "key": "color_background",
+          "type": "string",
+          "format": "color",
+          "label": "لون الخلفية العام",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "id": "branding",
+      "label": "الشعار والهوية",
+      "settings": [
+        {
+          "key": "logo_header",
+          "type": "string",
+          "format": "image",
+          "label": "لوجو الهيدر",
+          "default": "assets/images/logo.png"
+        },
+        {
+          "key": "logo_footer",
+          "type": "string",
+          "format": "image",
+          "label": "لوجو الفوتر",
+          "default": "assets/images/logo-footer.png"
+        }
+      ]
+    },
+    {
+      "id": "topbar",
+      "label": "التوب بار",
+      "settings": [
+        {
+          "key": "topbar_text",
+          "type": "string",
+          "label": "نص التوب بار",
+          "default": "🚚 توصيل سريع داخل الرياض"
+        }
+      ]
+    },
+    {
+      "id": "home_banners",
+      "label": "بنرات الصفحة الرئيسية",
+      "settings": [
+        {
+          "key": "hero_slide_1_image",
+          "type": "string",
+          "format": "image",
+          "label": "صورة السلايدر الرئيسي – سلايد 1",
+          "default": "assets/images/hero-1.jpg"
+        },
+        {
+          "key": "hero_slide_2_image",
+          "type": "string",
+          "format": "image",
+          "label": "صورة السلايدر الرئيسي – سلايد 2",
+          "default": "assets/images/hero-2.jpg"
+        },
+        {
+          "key": "hero_slide_3_image",
+          "type": "string",
+          "format": "image",
+          "label": "صورة السلايدر الرئيسي – سلايد 3",
+          "default": "assets/images/hero-3.jpg"
+        },
+        {
+          "key": "banner_half_left",
+          "type": "string",
+          "format": "image",
+          "label": "بانر 50% – يسار",
+          "default": "assets/images/banner-1.jpg"
+        },
+        {
+          "key": "banner_half_right",
+          "type": "string",
+          "format": "image",
+          "label": "بانر 50% – يمين",
+          "default": "assets/images/banner-2.jpg"
+        },
+        {
+          "key": "services_banner_1",
+          "type": "string",
+          "format": "image",
+          "label": "بانر خدمة الشاور والحلاقة",
+          "default": "assets/images/services-banner-1.jpg"
+        },
+        {
+          "key": "services_banner_2",
+          "type": "string",
+          "format": "image",
+          "label": "بانر الاستضافة والفندقة",
+          "default": "assets/images/services-banner-2.jpg"
+        },
+        {
+          "key": "countdown_section_image",
+          "type": "string",
+          "format": "image",
+          "label": "صورة سكشن العدّاد",
+          "default": "assets/images/countdown-offer.jpg"
+        }
+      ]
+    },
+    {
+      "id": "home_toggles",
+      "label": "إظهار / إخفاء السكاشن",
+      "settings": [
+        {
+          "key": "show_testimonials",
+          "type": "boolean",
+          "label": "إظهار سكشن التقييمات",
+          "default": true
+        },
+        {
+          "key": "show_blog_section",
+          "type": "boolean",
+          "label": "إظهار سكشن المدونة",
+          "default": true
+        },
+        {
+          "key": "show_brands_slider",
+          "type": "boolean",
+          "label": "إظهار سلايدر البراندات",
+          "default": true
+        },
+        {
+          "key": "show_countdown_section",
+          "type": "boolean",
+          "label": "إظهار سكشن العدّاد التنازلي",
+          "default": true
+        }
+      ]
+    },
+    {
+      "id": "home_texts",
+      "label": "نصوص الصفحة الرئيسية",
+      "settings": [
+        {
+          "key": "section_title_main_categories",
+          "type": "string",
+          "label": "عنوان سكشن الأقسام الرئيسية",
+          "default": "الأقسام الرئيسية"
+        },
+        {
+          "key": "section_title_subcategories",
+          "type": "string",
+          "label": "عنوان سكشن الأقسام الفرعية",
+          "default": "الأقسام الفرعية"
+        },
+        {
+          "key": "section_title_bestseller",
+          "type": "string",
+          "label": "عنوان سكشن الأكثر مبيعًا",
+          "default": "الأكثر مبيعًا"
+        },
+        {
+          "key": "section_title_why_us",
+          "type": "string",
+          "label": "عنوان سكشن لماذا نحن",
+          "default": "لماذا تختار بيوركات؟"
+        },
+        {
+          "key": "section_title_testimonials",
+          "type": "string",
+          "label": "عنوان سكشن التقييمات",
+          "default": "آراء عملائنا"
+        },
+        {
+          "key": "section_title_blog",
+          "type": "string",
+          "label": "عنوان سكشن المدونة",
+          "default": "من المدونة"
+        },
+        {
+          "key": "section_title_brands",
+          "type": "string",
+          "label": "عنوان سكشن البراندات",
+          "default": "العلامات التجارية المتوفرة"
+        },
+        {
+          "key": "countdown_title",
+          "type": "string",
+          "label": "عنوان سكشن العدّاد",
+          "default": "عرض خاص لوقت محدود"
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "label": "إعدادات الفوتر",
+      "settings": [
+        {
+          "key": "footer_about_text",
+          "type": "string",
+          "label": "نص تعريفي بالفوتر",
+          "default": "بيوركات متجر متخصص في منتجات وخدمات الحيوانات الأليفة، نوفر لك تجربة تسوق مريحة وممتعة لاحتياجات أليفك اليومية داخل المتجر وعبر الإنترنت."
+        },
+        {
+          "key": "footer_copyright",
+          "type": "string",
+          "label": "نص حقوق النشر",
+          "default": "© 2025 جميع الحقوق محفوظة لمتجر بيوركات"
+        },
+        {
+          "key": "footer_phone",
+          "type": "string",
+          "label": "رقم الجوال في الفوتر",
+          "default": "966500000000+"
+        },
+        {
+          "key": "footer_email",
+          "type": "string",
+          "label": "البريد الإلكتروني في الفوتر",
+          "default": "info@pure-cat.com"
+        },
+        {
+          "key": "footer_address",
+          "type": "string",
+          "label": "العنوان في الفوتر",
+          "default": "الرياض – حي النرجس"
+        },
+        {
+          "key": "social_twitter",
+          "type": "string",
+          "label": "رابط تويتر",
+          "default": "#"
+        },
+        {
+          "key": "social_instagram",
+          "type": "string",
+          "label": "رابط إنستجرام",
+          "default": "#"
+        },
+        {
+          "key": "social_tiktok",
+          "type": "string",
+          "label": "رابط تيك توك",
+          "default": "#"
+        },
+        {
+          "key": "social_facebook",
+          "type": "string",
+          "label": "رابط فيس بوك",
+          "default": "#"
+        }
+      ]
+    }
+  ]
+}

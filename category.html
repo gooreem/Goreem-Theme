@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طعام القطط – بيوركات</title>
+
+  <!-- خط Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- ملف الستايل الرئيسي -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ستايل خاص بصفحة القسم -->
+  <style>
+    body, html {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .category-page {
+      padding: 1.5rem 0 3rem;
+      background: #f7fafc;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 1rem;
+    }
+
+    .breadcrumbs a {
+      color: #2b6cb0;
+      text-decoration: none;
+    }
+
+    .breadcrumbs span {
+      margin: 0 0.25rem;
+    }
+
+    .category-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 0.25rem;
+    }
+
+    .category-subtitle {
+      font-size: 0.9rem;
+      color: #718096;
+      margin-bottom: 1.2rem;
+    }
+
+    /* تخطيط القسم: عمود فلتر يمين + عمود منتجات يسار */
+    .category-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.9fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .category-sidebar {
+      grid-column: 1; /* يمين بسبب RTL */
+    }
+
+    .category-products {
+      grid-column: 2; /* يسار */
+    }
+
+    @media (max-width: 992px) {
+      .category-layout {
+        grid-template-columns: 1fr;
+      }
+      .category-sidebar,
+      .category-products {
+        grid-column: 1;
+      }
+      .category-sidebar {
+        order: -1; /* الفلتر فوق المنتجات على الجوال */
+      }
+    }
+
+    /* هيدر القسم (عدد المنتجات + الترتيب) */
+    .category-header {
+      margin-bottom: 1rem;
+    }
+
+    .category-header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-direction: row-reverse; /* العدد على اليمين – الترتيب على اليسار */
+    }
+
+    .category-count {
+      font-size: 0.9rem;
+      color: #38a169;
+      font-weight: 600;
+    }
+
+    .category-sort select {
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+      background: #ffffff;
+      outline: none;
+      min-width: 190px;
+    }
+
+    .category-sort select:focus {
+      border-color: #2b6cb0;
+      box-shadow: 0 0 0 1px rgba(43, 108, 176, 0.15);
+    }
+
+    /* شبكة المنتجات */
+    .category-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      direction: rtl; /* أول منتج من ناحية اليمين */
+    }
+
+    @media (max-width: 1200px) {
+      .category-products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .category-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .category-products-grid .product-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 0.9rem;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      height: 100%;
+    }
+
+    .category-products-grid .product-card img {
+      width: 100%;
+      border-radius: 0.75rem;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card-cats {
+      font-size: 0.75rem;
+      color: #a0aec0;
+      min-height: 1.2em;
+    }
+
+    .category-products-grid .product-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a202c;
+      min-height: 2.5em;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: #c53030;
+      margin-bottom: 0.2rem;
+      width: fit-content;
+    }
+
+    .product-card-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+      color: #4a5568;
+      margin-bottom: 0.1rem;
+    }
+
+    .product-card-rating .stars {
+      color: #ffc107;
+    }
+
+    .product-card-rating .rating-value {
+      font-weight: 600;
+    }
+
+    .product-card-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-card-price {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #38a169;
+    }
+
+    .product-card-old-price {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      text-decoration: line-through;
+    }
+
+    .product-card-actions {
+      margin-top: 0.4rem;
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-add-cart,
+    .btn-options {
+      flex: 1 1 auto;
+      border-radius: 999px;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-add-cart {
+      background: #e6fffa;
+      color: #2f855a;
+      border: 1px solid #9ae6b4;
+    }
+
+    .btn-add-cart:hover {
+      background: #c6f6d5;
+    }
+
+    .btn-options {
+      background: #f7fafc;
+      color: #4a5568;
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-options:hover {
+      background: #edf2f7;
+    }
+
+    /* الفلتر الجانبي */
+    .category-sidebar-inner {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      padding: 1.2rem 1.1rem 1.3rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      position: sticky;
+      top: 90px;
+    }
+
+    .filter-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #38a169;
+      margin-bottom: 0.75rem;
+    }
+
+    .filter-section {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 0.7rem;
+    }
+
+    .filter-section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .filter-section-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.4rem;
+    }
+
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: #4a5568;
+      margin-bottom: 0.25rem;
+    }
+
+    .filter-option input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      accent-color: #2b6cb0;
+    }
+  </style>
+</head>
+<body>
+  <!-- التوب بار -->
+  <div class="top-bar">
+    <div class="container">
+      <p>🚚 توصيل سريع داخل الرياض</p>
+    </div>
+  </div>
+
+  <!-- الهيدر (نفس index.html و product.html) -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="شعار متجر بيوركات" />
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="category.html">الأقسام</a></li>
+            <li><a href="about.html">عن بيوركات</a></li>
+            <li><a href="#blog">المدونة</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#" class="header-icon-link">مفضلة</a>
+          <a href="#" class="header-icon-link">حسابي</a>
+          <a href="cart.html" class="header-cart">
+            <span class="cart-label">السلة</span>
+            <span class="cart-count">2</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="القائمة">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- قائمة الموبايل -->
+      <nav class="mobile-menu">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="category.html">الأقسام</a></li>
+          <li><a href="about.html">عن بيوركات</a></li>
+          <li><a href="#blog">المدونة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- محتوى صفحة القسم -->
+  <main class="category-page">
+    <div class="container">
+      <!-- breadcrumb -->
+      <nav class="breadcrumbs" aria-label="مسار الصفحة">
+        <a href="index.html">الرئيسية</a>
+        <span>/</span>
+        <span>طعام القطط</span>
+      </nav>
+
+      <h1 class="category-title">طعام القطط</h1>
+      <p class="category-subtitle">
+        تشكيلة واسعة من طعام القطط الجاف والرطب والسناكات من أفضل الماركات العالمية.
+      </p>
+
+      <div class="category-layout">
+        <!-- الفلتر الجانبي (يمين) -->
+        <aside class="category-sidebar" aria-label="تصفية المنتجات">
+          <div class="category-sidebar-inner">
+            <h2 class="filter-title">تصفية</h2>
+
+            <div class="filter-section">
+              <div class="filter-section-title">تصفية حسب التصنيف</div>
+              <label class="filter-option">
+                <input type="checkbox" /> طعام
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> طعام رطب
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> طعام جاف
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> مكافآت ومكملات
+              </label>
+            </div>
+
+            <div class="filter-section">
+              <div class="filter-section-title">طعام رطب للقطط</div>
+              <label class="filter-option">
+                <input type="checkbox" /> شوربة
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> شرائح
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> مع صلصة
+              </label>
+            </div>
+
+            <div class="filter-section">
+              <div class="filter-section-title">طعام جاف للقطط</div>
+              <label class="filter-option">
+                <input type="checkbox" /> للقطط الصغيرة
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> للقطط البالغة
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> للقطط الحساسة
+              </label>
+            </div>
+
+            <div class="filter-section">
+              <div class="filter-section-title">نطاق السعر</div>
+              <label class="filter-option">
+                <input type="checkbox" /> أقل من 20 ر.س
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> 20 – 50 ر.س
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" /> أكثر من 50 ر.س
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- المنتجات (يسار) -->
+        <section class="category-products">
+          <div class="category-header">
+            <div class="category-header-inner">
+              <div class="category-count">1502 منتج</div>
+              <div class="category-sort">
+                <select aria-label="ترتيب المنتجات">
+                  <option>ترتيب بـ الأكثر تداولاً</option>
+                  <option>الأحدث أولاً</option>
+                  <option>السعر من الأقل إلى الأعلى</option>
+                  <option>السعر من الأعلى إلى الأقل</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-products-grid">
+            <!-- منتج 1 -->
+            <article class="product-card">
+              <img src="assets/images/product-1.jpg" alt="لعبة تفاعلية للقطط مع ريش" />
+              <div class="product-card-cats">قطط، ألعاب، ترفيه</div>
+              <div class="product-title">لعبة تفاعلية للقطط مع ريش ملون لتحفيز الحركة واللعب</div>
+              <div class="product-badge">عرض خاص</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-value">5.0</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">9.75 ر.س</span>
+                <span class="product-card-old-price">12.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 2 -->
+            <article class="product-card">
+              <img src="assets/images/product-2.jpg" alt="طعام رطب للقطط بالتونة" />
+              <div class="product-card-cats">قطط، طعام، طعام رطب</div>
+              <div class="product-title">طعام رطب للقطط بالتونة عالية الجودة – 70 جرام</div>
+              <div class="product-badge">الجمعة الخضراء</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-value">5.0</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">8.10 ر.س</span>
+                <span class="product-card-old-price">9.50 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 3 -->
+            <article class="product-card">
+              <img src="assets/images/product-3.jpg" alt="معجون مكافآت للقطط" />
+              <div class="product-card-cats">قطط، مكافآت، سناكات</div>
+              <div class="product-title">معجون مكافآت للقطط مع فيتامينات لدعم المناعة</div>
+              <div class="product-badge">عرض الموسم</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">4.8</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">19.25 ر.س</span>
+                <span class="product-card-old-price">22.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 4 -->
+            <article class="product-card">
+              <img src="assets/images/product-4.jpg" alt="طعام رطب مرق للقطط" />
+              <div class="product-card-cats">قطط، طعام، طعام رطب</div>
+              <div class="product-title">طعام رطب للقطط بمرق غني وطعم مميز – 85% لحم</div>
+              <div class="product-badge">الأكثر مبيعًا</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-value">5.0</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">18.10 ر.س</span>
+                <span class="product-card-old-price">21.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 5 -->
+            <article class="product-card">
+              <img src="assets/images/product-5.jpg" alt="طعام جاف متكامل" />
+              <div class="product-card-cats">قطط، طعام، طعام جاف</div>
+              <div class="product-title">طعام جاف متكامل للقطط البالغة بنكهة الدجاج</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-value">5.0</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">75.00 ر.س</span>
+                <span class="product-card-old-price">89.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 6 -->
+            <article class="product-card">
+              <img src="assets/images/product-6.jpg" alt="حليب بديل للقطط الصغيرة" />
+              <div class="product-card-cats">قطط صغيرة، مكملات غذائية</div>
+              <div class="product-title">حليب بديل للقطط الصغيرة غني بالفيتامينات والمعادن</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">4.7</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">39.00 ر.س</span>
+                <span class="product-card-old-price">45.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 7 -->
+            <article class="product-card">
+              <img src="assets/images/product-7.jpg" alt="سناك مقرمش للقطط" />
+              <div class="product-card-cats">قطط، سناكات، مكافآت</div>
+              <div class="product-title">سناك مقرمش للقطط بطعم السلمون – 60 جرام</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-value">5.0</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">14.50 ر.س</span>
+                <span class="product-card-old-price">17.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+
+            <!-- منتج 8 -->
+            <article class="product-card">
+              <img src="assets/images/product-8.jpg" alt="طعام رطب للقطط الصغيرة" />
+              <div class="product-card-cats">قطط صغيرة، طعام رطب</div>
+              <div class="product-title">طعام رطب للقطط الصغيرة بدجاج طري سهل الهضم</div>
+              <div class="product-card-rating">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-value">4.9</span>
+              </div>
+              <div class="product-card-price-row">
+                <span class="product-card-price">10.00 ر.س</span>
+                <span class="product-card-old-price">12.00 ر.س</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn-add-cart">أضف للسلة</button>
+                <button class="btn-options">خيارات متعددة</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- الفوتر (نفس الصفحات الأخرى) -->
+  <footer class="site-footer">
+    <div class="container footer-columns">
+      <div class="footer-column footer-about">
+        <img src="assets/images/logo-footer.png" alt="شعار بيوركات" class="footer-logo" />
+        <p>
+          بيوركات متجر متخصص في منتجات وخدمات الحيوانات الأليفة، نوفر لك تجربة تسوق مريحة
+          وممتعة لاحتياجات أليفك اليومية داخل المتجر وعبر الإنترنت.
+        </p>
+      </div>
+
+      <div class="footer-column footer-links">
+        <h3>روابط مهمة</h3>
+        <ul>
+          <li><a href="about.html">عن بيوركات</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">سياسة الاستبدال والاسترجاع</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3>معلومات التواصل</h3>
+        <p>الرياض – حي النرجس</p>
+        <p>جوال: <a href="tel:966500000000">966500000000+</a></p>
+        <p>البريد الإلكتروني: <a href="mailto:info@pure-cat.com">info@pure-cat.com</a></p>
+        <div class="footer-social">
+          <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+          <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="assets/icons/tiktok.png" alt="TikTok"></a>
+          <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 جميع الحقوق محفوظة لمتجر بيوركات</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- ملف الجافاسكربت الرئيسي -->
+  <script src="js/main.js"></script>
+</body>
+</html>

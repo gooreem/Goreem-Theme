@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متجر بيوركات – Pure Cat</title>
+
+  <!-- خط Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- ملف الستايل الرئيسي -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- التوب بار -->
+  <div class="top-bar">
+    <div class="container">
+      <p>🚚 توصيل سريع داخل الرياض</p>
+    </div>
+  </div>
+
+  <!-- الهيدر -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="شعار متجر بيوركات" />
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="category.html">الأقسام</a></li>
+            <li><a href="about.html">عن بيوركات</a></li>
+            <li><a href="#blog">المدونة</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#" class="header-icon-link">مفضلة</a>
+          <a href="#" class="header-icon-link">حسابي</a>
+          <a href="cart.html" class="header-cart">
+            <span class="cart-label">السلة</span>
+            <span class="cart-count">2</span>
+          </a>
+          <button class="mobile-menu-toggle" aria-label="القائمة">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- قائمة الموبايل -->
+      <nav class="mobile-menu">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="category.html">الأقسام</a></li>
+          <li><a href="about.html">عن بيوركات</a></li>
+          <li><a href="#blog">المدونة</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main>
+    <!-- سلايدر الهيرو -->
+    <section class="home-section hero-section">
+  <div class="container">
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+
+        <!-- سلايد 1 – بانر عرض مثلاً -->
+        <div class="swiper-slide">
+          <a href="category.html" class="hero-banner-link">
+            <img src="assets/images/hero-1.jpg" alt="عرض خاص على طعام القطط" />
+          </a>
+        </div>
+
+        <!-- سلايد 2 (اختياري) -->
+        <div class="swiper-slide">
+          <a href="category.html" class="hero-banner-link">
+            <img src="assets/images/hero-2.jpg" alt="خصومات على رمل القطط" />
+          </a>
+        </div>
+
+        <!-- سلايد 3 (اختياري) -->
+        <div class="swiper-slide">
+          <a href="category.html" class="hero-banner-link">
+            <img src="assets/images/hero-3.jpg" alt="ألعاب وترفيه لأليفك" />
+          </a>
+        </div>
+
+      </div>
+
+      <!-- نقاط السلايدر -->
+      <div class="swiper-pagination hero-pagination"></div>
+
+      <!-- أسهم التنقل -->
+      <div class="swiper-button-prev hero-prev"></div>
+      <div class="swiper-button-next hero-next"></div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- الشريط الإعلاني المتحرك -->
+    <section class="ticker-section">
+      <div class="container">
+        <div class="swiper ticker-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">خصم 15% على أول طلب أونلاين باستخدام كود PURE15</div>
+            <div class="swiper-slide">خدمة شاور وحلاقة احترافية لحيوانك الأليف بحجز مسبق</div>
+            <div class="swiper-slide">استضافة وفندقة بأجنحة مريحة ومتابعة مستمرة للأليف</div>
+            <div class="swiper-slide">توصيل سريع داخل الرياض خلال 24 ساعة</div>
+            <div class="swiper-slide">تشكيلة واسعة من أشهر البراندات العالمية</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 بانر جنب بعض -->
+    <section class="double-banners-section">
+      <div class="container">
+        <div class="double-banners">
+          <a href="category.html" class="banner-card">
+            <img src="assets/images/banner-1.jpg" alt="بانر عروض طعام القطط" />
+          </a>
+          <a href="category.html" class="banner-card">
+            <img src="assets/images/banner-2.jpg" alt="بانر عروض رمل القطط" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- الأقسام الرئيسية -->
+    <section class="main-categories-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">الأقسام الرئيسية</h2>
+          <p class="section-subtitle">اختر القسم المناسب لاحتياجات أليفك</p>
+        </div>
+        <div class="categories-grid">
+          <a href="category.html" class="category-card">
+            <img src="assets/images/category-food.jpg" alt="طعام الحيوانات الأليفة" />
+            <h3>طعام الحيوانات الأليفة</h3>
+          </a>
+          <a href="category.html" class="category-card">
+            <img src="assets/images/category-litter.jpg" alt="رمل ولوازم الحمام" />
+            <h3>رمل ولوازم الحمام</h3>
+          </a>
+          <a href="category.html" class="category-card">
+            <img src="assets/images/category-toys.jpg" alt="ألعاب وتسالي" />
+            <h3>ألعاب وتسالي</h3>
+          </a>
+          <a href="category.html" class="category-card">
+            <img src="assets/images/category-care.jpg" alt="صحة وعناية" />
+            <h3>صحة وعناية</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- الأقسام الفرعية – Swiper -->
+    <section class="subcategories-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">الأقسام الفرعية</h2>
+          <p class="section-subtitle">
+            تصفّح تفاصيل أكثر مثل الوجبات الجافة، الرطبة، السناكات، الرمال بأنواعها وغيرها.
+          </p>
+        </div>
+
+        <div class="subcategories-swiper-wrapper">
+          <button class="swiper-nav-button subcat-prev" type="button">‹</button>
+          <button class="swiper-nav-button subcat-next" type="button">›</button>
+
+          <div class="swiper subcategories-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-wet-food.jpg" alt="وجبات رطبة" />
+                  <div>وجبات رطبة</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-dry-food.jpg" alt="وجبات جافة" />
+                  <div>وجبات جافة</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-snacks.jpg" alt="سناكات ومكافآت" />
+                  <div>سناكات ومكافآت</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-litter-clumping.jpg" alt="رمل متكتل" />
+                  <div>رمل متكتل</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-litter-silica.jpg" alt="رمل سيليكا" />
+                  <div>رمل سيليكا</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-litter-box.jpg" alt="ليتربوكس" />
+                  <div>ليتربوكس</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-toys.jpg" alt="ألعاب تفاعلية" />
+                  <div>ألعاب تفاعلية</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-scratcher.jpg" alt="خداشات" />
+                  <div>خداشات</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-shampoo.jpg" alt="شامبو وعناية" />
+                  <div>شامبو وعناية</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-supplements.jpg" alt="مكملات غذائية" />
+                  <div>مكملات غذائية</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-beds.jpg" alt="أسرة وبيوت" />
+                  <div>أسرة وبيوت</div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="subcategory-card">
+                  <img src="assets/images/subcat-accessories.jpg" alt="أطواق وإكسسوارات" />
+                  <div>أطواق وإكسسوارات</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- المنتجات الأكثر مبيعًا -->
+    <section class="bestseller-section" id="bestseller">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">الأكثر مبيعًا</h2>
+          <p class="section-subtitle">
+            مجموعة مختارة من المنتجات الأكثر طلبًا من عملائنا.
+          </p>
+        </div>
+
+        <div class="swiper bestseller-swiper">
+          <div class="swiper-wrapper">
+            <!-- منتج 1 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-1.jpg" alt="طعام جاف للقطط بنكهة الدجاج" />
+                <h3 class="product-title">طعام للقطط بنكهة الدجاج</h3>
+                <p class="product-price">45.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 2 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-2.jpg" alt="طعام رطب بقطع التونة" />
+                <h3 class="product-title">طعام رطب بقطع التونة</h3>
+                <p class="product-price">7.50 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 3 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-3.jpg" alt="رمل متكتل برائحة البيبي بودر" />
+                <h3 class="product-title">رمل برائحة البيبي بودر</h3>
+                <p class="product-price">55.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 4 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-4.jpg" alt="عصارات تشورو متنوعة النكهات" />
+                <h3 class="product-title"> تشورو متنوعة النكهات</h3>
+                <p class="product-price">22.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 5 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-5.jpg" alt="ألعاب تفاعلية للقطط مع كرة" />
+                <h3 class="product-title">لعبة و كرة دوّارة</h3>
+                <p class="product-price">39.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 6 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-6.jpg" alt="سرير مريح للقطط" />
+                <h3 class="product-title">سرير للقطط بتصميم ناعم</h3>
+                <p class="product-price">89.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 7 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-7.jpg" alt="خداشة مع عمود تسلق" />
+                <h3 class="product-title">خداشة مع عمود تسلق</h3>
+                <p class="product-price">120.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+            <!-- منتج 8 -->
+            <div class="swiper-slide">
+              <article class="product-card">
+                <img src="assets/images/product-8.jpg" alt="مكملات شعر وبشرة للقطط" />
+                <h3 class="product-title">مكملات شعر وبشرة للقطط</h3>
+                <p class="product-price">68.00 ر.س</p>
+                <a href="product.html" class="btn btn-sm primary">عرض المنتج</a>
+              </article>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev bestseller-prev"></div>
+          <div class="swiper-button-next bestseller-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- سكشن العداد مع كود خصم -->
+    <section class="countdown-section" id="countdown">
+      <div class="container">
+        <div class="countdown-box">
+          <div class="countdown-image">
+            <img src="assets/images/countdown-offer.jpg" alt="عرض خاص في بيوركات" />
+          </div>
+          <div class="countdown-content">
+            <h2>عرض خاص لوقت محدود</h2>
+            <p>
+              خصم إضافي على مجموعة مختارة من منتجات الطعام والعناية عند استخدام
+              كود الخصم التالي قبل انتهاء الوقت.
+            </p>
+
+            <div class="countdown-timer">
+              <div class="countdown-unit">
+                <span id="countdown-days">00</span>
+                <span class="label">أيام</span>
+              </div>
+              <div class="countdown-unit">
+                <span id="countdown-hours">00</span>
+                <span class="label">ساعات</span>
+              </div>
+              <div class="countdown-unit">
+                <span id="countdown-minutes">00</span>
+                <span class="label">دقائق</span>
+              </div>
+              <div class="countdown-unit">
+                <span id="countdown-seconds">00</span>
+                <span class="label">ثوانٍ</span>
+              </div>
+            </div>
+
+            <div class="discount-code">
+              <span>استخدم كود الخصم</span>
+              <strong>PURE15</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- سكشن الفيديو + البنرين (الخدمات) -->
+<section class="services-media-section" id="services">
+  <div class="container">
+    <div class="services-media-grid">
+
+      <!-- العمود الأول: البنرين فوق بعض -->
+      <div class="services-banners-col">
+        <a href="#" class="banner-card">
+          <img src="assets/images/services-banner-1.jpg" alt="خدمة الشاور والحلاقة" />
+        </a>
+
+        <a href="#" class="banner-card">
+          <img src="assets/images/services-banner-2.jpg" alt="خدمة الاستضافة والفندقة" />
+        </a>
+      </div>
+
+      <!-- العمود الثاني: الفيديو -->
+      <div class="services-video-col">
+        <div class="services-video-wrapper">
+          <video
+            class="services-video"
+            src="assets/videos/banner-video.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- لماذا نحن -->
+    <section class="why-us-section" id="why-us">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">لماذا تختار بيوركات؟</h2>
+          <p class="section-subtitle">
+            نحرص على تقديم تجربة متكاملة لمالك الأليف من أول زيارة حتى إنهاء الطلب.
+          </p>
+        </div>
+
+        <div class="why-us-grid">
+          <div class="why-card">
+            <h3>اختيار منتجات بعناية</h3>
+            <p>نختار أفضل البراندات العالمية المعروفة بجودتها العالية وصحتها للحيوانات الأليفة.</p>
+          </div>
+          <div class="why-card">
+            <h3>توصيل سريع داخل الرياض</h3>
+            <p>طلبك يوصل لباب البيت بسرعة وبطريقة تغليف آمنة تراعي احتياج الأليف.</p>
+          </div>
+          <div class="why-card">
+            <h3>خدمات عناية متكاملة</h3>
+            <p>شاور، حلاقة، استضافة وفندقة في بيئة مريحة وتحت إشراف فريق مهتم ومحب للحيوانات.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- التقييمات – Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">آراء عملائنا</h2>
+          <p class="section-subtitle">
+            جزء من تقييمات العملاء بعد تجربة التسوق والخدمات في بيوركات.
+          </p>
+        </div>
+
+        <div class="swiper testimonials-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  أول تجربة لي مع بيوركات وكانت ممتازة، توصيل سريع وتغليف مرتب جداً.
+                </p>
+                <div class="testimonial-meta">
+                  <span class="testimonial-name">نورة – الرياض</span>
+                  <span class="testimonial-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  حجزت شاور وحلاقة لقطتي وكانت مرتاحة بشكل واضح بعد الزيارة، شكراً لكم.
+                </p>
+                <div class="testimonial-meta">
+                  <span class="testimonial-name">أحمد – حي النرجس</span>
+                  <span class="testimonial-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  تنوع كبير في طعام القطط والأسعار مناسبة جداً، أكيد مو آخر مرة أطلب منكم.
+                </p>
+                <div class="testimonial-meta">
+                  <span class="testimonial-name">سارة – الدمام</span>
+                  <span class="testimonial-stars">★★★★☆</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  أعجبني اهتمامهم بالتفاصيل وخدمة العملاء السريعة في الرد على الاستفسارات.
+                </p>
+                <div class="testimonial-meta">
+                  <span class="testimonial-name">خالد – الرياض</span>
+                  <span class="testimonial-stars">★★★★★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev testimonials-prev"></div>
+          <div class="swiper-button-next testimonials-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- سكشن المدونة -->
+    <section class="blog-section" id="blog">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">من المدونة</h2>
+          <p class="section-subtitle">
+            مقالات ونصائح تساعدك على العناية اليومية بأليفك.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img src="assets/images/blog-1.jpg" alt="نصائح لاختيار طعام القطط" />
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">كيف تختار طعامًا مناسبًا لقطك؟</h3>
+              <p class="blog-card-meta">نصائح غذائية – 5 دقائق قراءة</p>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="assets/images/blog-2.jpg" alt="تحضير الأليف لزيارة البيطري" />
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">تحضير الأليف لزيارة البيطري بدون توتر</h3>
+              <p class="blog-card-meta">صحة وعناية – 4 دقائق قراءة</p>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="assets/images/blog-3.jpg" alt="أفكار لتسلية القطط في المنزل" />
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">أفكار بسيطة لتسلية القطط داخل المنزل</h3>
+              <p class="blog-card-meta">تسالي وألعاب – 3 دقائق قراءة</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- سكشن البراندات -->
+    <section class="brands-section" id="brands">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">العلامات التجارية المتوفرة</h2>
+          <p class="section-subtitle">
+            نوفّر لك مجموعة من أشهر البراندات العالمية في عالم الحيوانات الأليفة.
+          </p>
+        </div>
+
+        <div class="swiper brands-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-1.png" alt="Royal Canin" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-2.png" alt="Farmina" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-3.png" alt="Purina" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-4.png" alt="Inaba" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-5.png" alt="Whiskas" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-6.png" alt="Brit" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-7.png" alt="Josera" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-8.png" alt="Felix" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-9.png" alt="N&D" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-10.png" alt="Orijen" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-11.png" alt="Acana" class="brand-logo" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="brand-logo-wrapper">
+                <img src="assets/images/brand-12.png" alt="Other Brands" class="brand-logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- الفوتر -->
+  <footer class="site-footer">
+    <div class="container footer-columns">
+      <div class="footer-column footer-about">
+        <img src="assets/images/logo-footer.png" alt="شعار بيوركات" class="footer-logo" />
+        <p>
+          بيوركات متجر متخصص في منتجات وخدمات الحيوانات الأليفة، نوفر لك تجربة تسوق مريحة
+          وممتعة لاحتياجات أليفك اليومية داخل المتجر وعبر الإنترنت.
+        </p>
+      </div>
+
+      <div class="footer-column footer-links">
+        <h3>روابط مهمة</h3>
+        <ul>
+          <li><a href="about.html">عن بيوركات</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+          <li><a href="#">سياسة الاستبدال والاسترجاع</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3>معلومات التواصل</h3>
+        <p>الرياض – حي النرجس</p>
+        <p>جوال: <a href="tel:966500000000">966500000000+</a></p>
+        <p>البريد الإلكتروني: <a href="mailto:info@pure-cat.com">info@pure-cat.com</a></p>
+        <div class="footer-social">
+  <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+  <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+  <a href="#"><img src="assets/icons/tiktok.png" alt="TikTok"></a>
+  <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+</div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 جميع الحقوق محفوظة لمتجر بيوركات</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- ملف الجافاسكربت الرئيسي -->
+  <script src="js/main.js"></script>
+</body>
+</html>
